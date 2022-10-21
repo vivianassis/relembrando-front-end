@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página principal</title>
+</head>
+<body style="font-size: 30; background-color: whitesmoke; text-align: justify; font-family: Arial, Helvetica, sans-serif;">
+    <header>
+    <h1>Introdução ao HTML na prática</h1>
+    <hr />
+
+    <h2 id="indice">Índice</h3>
+    <ul>
+        <li><a href="#primeiro">Formatação de texto I</a></li>
+        <li><a href="#segundo">Formatação de texto II</a></li>
+        <li><a href="#terceiro">Formulários</a></li>
+        <li><a href="#quarto">Listas</a></li>
+        <li><a href="#quinto">Imagens</a></li>
+        <li><a href="#sexto">Links</a></li>
+    </ul>
+    <br />
+    </header>
+    <nav>
+    <section id="sessão-1">
+    <h3 id="primeiro">Como Formatar o HTML - Parte 1</h3> <hr>
+    <p id="primeiro-paragrafo">
+    <p>Como é legal criar formatos e páginas na internet! 
+        <br />Nelas podemos ver diversos tipos de formatação, tais como os exibidos abaixo:</p>
+    <h4>Títulos:</h4>
+        <h1 id="titulo" class="titulo-principal">Sou um <i>Super título!</i></h1>
+    <h4>Cores:</h3>
+        <h2 b id="subtitulo" style="color: blue;">Sou um texto todo azul :D</b></h2>
+    <h4>Formulários:</h4>
+    <p>Nome: <input type="text" /></p>
+    <p>Idade: <input type="number" /></p>
+    <p>Cor favorita: <input type="color" /></p>
+    <h4>Imagens:</h4>  
+    <img width="150" src="src/exemplo.png" alt="exemplo">
+    <p>Tudo isso se deve as chamadas "TAGS" do HTML. <br />
+    São elas que nos permitem brincar com todo tipo de dados nas páginas <br />
+    O HTML é uma linguagem usada para marcação que, apesar de não ser considerada uma linguagem de programação, 
+        faz parte da base de conhecimentos relacionados ao Front-end, pois trata exatamente da criação e organização dos itens dentro das páginas Web.</p> 
+        <a href="#indice">
+            <small>Voltar ao Índice</small>
+        </a>
+        <br />
+    </section>
+
+
+    <section id="sessão-2">
+    <h3 id="segundo">Como Formatar o HTML - Parte 2</h3> <hr />
+    <h4>Podemos seguir abaixo para alguns exemplos de formatação para texto dentro do HTML:</h4>
+        <p id="segundo-paragrafo">
+            <ul>
+                <li><b>Usamos a tag 'b' para ter o negrito.</b>.</li>
+                <li><i>A tag 'i' gera o efeito italico</i>.</li>
+                <li><mark>Para marcar o texto, usamos a tag 'mark'.</mark></li>
+                <li><u>A tag 'u' deixa o texto sublinhado</u>.</li>
+                <li>Texto escrito mais acima da linha <sup>sup</sup></li>
+                <li>Texto escrito mais abaixo da linha <sub>sub</sub></li>
+            </ul>
+            Obs.: Podem ser usadas TAGS em conjunto sempre que preciso: <br />
+            <button>
+                <a href="index.html">As tags 'button' e 'a' juntas podem criar um botão clicável!</a>
+            </button></br>
+        </p>
+        <a href="#indice">
+            <small>Voltar ao Índice</small>
+        </a>
+        <br />
+        </section>
+
+
+        <section id="sessão-3">
+        <h3 id="terceiro">Como Formatar o HTML - Parte 3</h3> <hr />
+        <p id="terceiro-paragrafo"> Através da tag 'input', podemos atribuir diversas funções a campos dentro de nossas páginas. <br>
+            Essa tag e seus atributos são muito usados para criar e formatar formulários web. <br>
+            Alguns exemplos de formatação para a tag 'input' estão descritos na lista a seguir:
+            <ul>
+        <li>Para criar um Campo 'texto', basta usar o atributo 'type' com o valor 'text' no input:<br />
+            < input type="text" / > =  <input type="text" /> <br /></li> 
+        <li>Para o Campo 'cor', o atributo type recebe o valor 'color': <br />
+            < input type="color" / > =  <input type="color" /> <br /></li> 
+        <li>Criamos o Campo 'número' usando o valor 'number' no type do input: <br />
+            < input type="number" / > =  <input type="number" /></li> 
+    </ul>
+        </p>
+            Seguindo essa mesma lógica é fácil conseguir visualizar e criar formulários super legais.        
+        </p>
+        <a href="#indice">
+            <small>Voltar ao Índice</small>
+        </a>
+        <br />
+        </section>
+
+
+        <section id="sessão-4">
+        <h3 id="quarto">Como Formatar o HTML - Parte 4</h3> <hr />
+        <p id="quarto-paragrafo">
+            <h5>Listas ordenadas (TAG 'ol')</h5>
+            <p>Criadas para descrever uma sequência determinada de itens:</br>
+            Listas ordenadas são identificadas por possuírem uma ordem de grandeza<br>
+            Exemplos: (1-2-3) (I - II - III)</p> 
+            <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+            </ol>
+            <ol>
+                <li> Item 1
+                    <ol>
+                        <li>Item 1.1</li>
+                        <li>Item 1.2</li>
+                        <li>Item 1.3</li>
+                        <li>Item 1.4</li>
+                        <li>Item 1.5</li>
+                    </ol>
+                </li>
+            </ol>
+            <h5>Listas não ordenadas (TAG 'ul')</h5>
+            <p>Criadas para descrever uma sequência de itens onde a ordem não importa:<br />
+            A lista não ordenada se vale de marcadores para sua formatação.</p>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5
+                    <ul>
+                    <li>Item 5.1</li>
+                    <li>Item 5.2</li>
+                    <li>Item 5.3</li>
+                    <li>Item 5.4</li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+        <a href="#indice">
+            <small>Voltar ao Índice</small>
+        </a>
+        </section>
+        
+        
+        <section id="sessão-5">
+        <h3 id="quinto">Como Formatar o HTML - Parte 5</h3>
+        <p id="quinto-paragrafo">
+            Imagens no HTML tem uma tag específica, a tag 'img'. (< img src="" alt="" >) <br>
+            Existem com ela como podemos ver no exemplo acima, dois atributos essenciais, que são o 'src' (que determina o local de onde o navegador buscará a imagem)
+            e o 'alt', que apesar de opcional, é bastante importante, pois ele da uma breve descrição da imagem, facilitando sua leitura por programas de acessibilidade.
+            <br />Existem também, vários atributos não obrigatórios, para melhor se adequar a cada página como, por exemplo, a tag WIDTH:
+        </p>
+            <img width="50" src="src/exemplo.png" alt="exemplo">
+        </a>
+            <img width="150" src="src/exemplo.png" alt="exemplo">
+        </a>
+            <img width="350" src="src/exemplo.png" alt="exemplo">
+        </a>
+        <br>
+        Width = usada para dar um tamanho a imagem <br>
+        </section>
+        
+        
+        <section id="sessão-6">
+        <h3 id="sexto">Como Formatar o HTML - Parte 6</h3>
+        <p id="sexto-paragrafo">
+        Como sabemos, uma das funcionalidades mais usadas nas páginas Web são os Hiperlinks, ou simplesmente LINKS, eles são responsáveis pela navegabilidade na internet, e são muito importantes para a experiência do usuário ser cada vez mais completa.
+        Para inserir LINK, usamos a TAG 'a', onde o atributo href recebe o valor do link e precisamos colocar um conteúdo visível, entre as tags.
+        <h5>A tag 'a': <br>
+        <p>< a href="www.meusite.com" >< h1 >Meu site aqui< /h1 >< /a ></p>   </h5> 
+    <p>Podemos usar o atributo target para definir como o site fará a navegabilidade até o link informado:</p>
+    <p>'_blank' como valor, para que o link abra em uma nova aba</p>
+    <a href="http://dio.me" target="_blank">DIO.me</a>
+    <p>'_self' como valor, para que o link abra na mesma guia</p>
+    <a href="http://dio.me" target="_self">DIO.me, mas abrindo na mesma aba</a>
+    <p>Podemos também, usar o atributo 'title' na tag 'a'. Ele serve para mostrar um tooltip sobre o link</p>
+    <a href="http://dio.me" target="_blank" title="Informação adicional">DIO.me, mas com tooltip</a> </br></br>
+
+    <p>Também podemos inserir Links em imagens como mostrado a seguir:</p> 
+    <a href="index.html">
+        <img width="150" src="src/voltar.png" alt="HOME">
+    </a>
+        </p>
+        </section>
+    </nav>
+    <footer>
+        <h4>Espero que tenham curtido o resumo galera! Até a próxima!</h4>
+    </footer>
+</body>
+</html>
