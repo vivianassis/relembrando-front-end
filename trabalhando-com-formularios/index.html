@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários HTML</title>
+</head>
+<body>
+    <head>
+        <section id="exemplo-de-formulario">
+    <h1>Formulários HTML</h1> <hr />
+    <h3 style="color: blue;">Exemplo: Finalização de compra</h3>
+    <form onsubmit="alert('Formulário enviado');" name= "cadastro" autocomplete="off" method="post" target="" action="#">
+        <h3>Sobre seu pedido:</h3>
+        <label for="cor">Cor favorita: </label><input type="color" name="cor"> <br />
+        <label for="cupom">Cupom SECRETO: </label><input type="password" name="cupom"> <br />
+        <label for="data">Data de vencimento: </label><input type="date" name="data"> <br />
+        <label for="radio">Deseja embalagem para presente? </label> Sim<input type="radio" value="sim" name="aceita"> Não<input type="radio" value="nao" name="aceita"> <br />        <label for="nível">Nível de satisfação com a compra<sup>*</sup>: </label><input type="range" min="0" max="100" step="50" value="100" name="nivel"> <br />
+
+    <h3>Sobre você:</h3>
+        <label for="nome">Nome: </label><input type="text" name="nome"> <br />
+        <label for="idade">Idade: </label><input type="number" min="0" step="3" name="idade"> <br />
+        <label for="mail">E-mail: </label><input name="mail" type="email"> <br />
+        <label for="fone">Telefone: </label><input type="tel" name="fone"> <br />
+        <label for="site">Seu site: </label><input name="site" type="url"> <br />
+        <label for="arquivo">Foto(s) para o seu perfil: </label><input type="file" multiple/>
+        <br /> <small>        <label for="check">Concordo com os termos de uso: </label>  <input type="checkbox" value="sim" name="check"><br />
+        </small>
+        <p><button type="submit">Enviar</button></p>
+        <small><sup>*</sup>Essa resposta é opcional, mas nos ajuda a oferecer o melhor serviço para você!</small>
+        <hr />
+    </form>
+
+    <form action="#">
+        <h3>Campos de busca</h3>
+        <label for="busca">Encontre seu produto aqui: </label><input type="search" name="busca">
+    </form>
+</section>
+    </head>
+    <nav>
+<section id="tag-form">
+    <h3>TAG "form"</h3>
+    <p> Na TAG < form >, que não possui representação na interface, mas "abraça" os campos, existem atributos específicos que englobam todo o formulário: <br>
+        Vale ressaltar aqui também, uma tag muito importante, que também é usada em praticamente todo o formulário, a tag < label >. <br>
+        Ela serve para dar atributos as descrições que explicam os campos(por exemplo, nome, idade, gênero, etc) e não tem uma representação gráfica dentro do formulário. 
+    </p>
+    <ul>
+        <li>name: o nome do formulário</li> 
+        <li> method: qual dos metodos HTTP irá ser usado
+            <ul>
+                <li>Melhor POST nesse caso, pois não usa a url com os dados do formulário, mas também pode ser GET</li>
+            </ul>
+        </li>
+        <li>action: endereço do servidor (ou site) onde será enviado o formulário</li>
+        <li>target: abre na mesma aba ou não, após o envio</li>
+        <li>autocomplete: Se completar automaticamente baseado no cache (gravar a senha por exemplo)</li>
+        <li>"on[...]": Geralmente usando o 'onsubmit' para formulários</li> 
+    </ul> 
+</section>
+<section id="tag-input">
+    <h3>TAGS "input"</h3>
+    <p>Input é um campo onde inserimos valores. É importante conhecer o navegador ao estudar input, pois essa TAG é dependente de compatibilidade para a exibição de certos campos. <br>
+    
+    </p>
+    <p><h4>Types de input:</h4></p>
+    <ul>
+        <li>Text: Aceita todo tipo de entrada(caractere especial, número, e texto</li> <br>
+        <li>Number: Aceita apenas números (e a letra e, número científico)
+            <p>Exemplos de atributos da tag number (min e max podem ser alterados entre si, invertendo os significados) <br>
+               - min = Número mínimo aceito <br>
+                - minlength = Tamanho mínimo do preenchimento (em caracteres) <br>
+                - step = Intervalo de pulos que da ao usar as setas do input <br>
+        </p>
+        </li>
+        <li>Button: Cria um botão clicável.</li>
+         <p> Características do button: <br>
+            < button type = <br>
+                - button [clicável] <br>
+                - menu [abre um submenu] <br>
+                - reset [limpa os campos] <br>
+                - submit [envia o formulário] <br>
+            > "NOME" < /button >
+         </p>
+         <li>Range: Cria um campo scroll, que aceita os mesmos types do campo number (min, max, etc) <br />
+            No campo range podemos carregar o campo já num determinado valor, usando a tag value e setando o valor desejado, que será o inicialmente carregado no scroll.
+         </li> <br />
+         <li>Color: Cria um seletor de cor.</li> <br />
+         <li>Email e URL: cria um campo com validações predefinidas(com @ para e-mail, ou com http para url, por exemplo). </li> <br />
+         <li>Date: Cria conforme o navegador usado, um campo para inserir data.</li> <br />
+         <li>Checkbox: Usado geralmente como valor booleano, cria um campo para selecionar (ou não, uma opção)</li> <br />
+         <li>Radio: Usado da mesma maneira do checkbox, porém definindo um 'name' em comum, ele impede que se possa selecionar duas opções ao mesmo tempo.</li> <br />
+         <li>Tel: Cria um campo com a formatação editável e/ou predefinida para telefone. Aparentemente é um campo de texto comum. <br /> 
+            Isso ocorre pois outros paises tem diferentes tipos de número de telefone, incluindo diversos tipos de caracteres. <br />
+            Muitos navegadores atuais ainda não implementaram a tag 'tel' ainda.</li> <br />
+         <li>Hidden: Campo invisível ao usuário do navegador, mas que permanece enviando dados ao servidor.</li> <br />
+         <li>File: Campo para envio de arquivos. Nesse campo pode colocar um novo atributo 'sem valor atribuído', chamado /multiple. <br />
+            Isso pode ser feito desta forma: < input type="file" multiple/ >  </li>
+            <h4>Extra!</h4>
+            <p>A partir do HTML 5 muitos dos campos acima foram implementados no Google Chrome. <br /> 
+            Um dos que prometem ser bastante uteis na criação, não exatamente só dos formulários mas também isoladamente é o campo 'search'. <br>
+            Como o próprio nome já diz, trata-se de um campo usado para buscar apresentando diversas funcionalidades dentro dos sites atuais, como os e-commerces. O diferencial desse campo é sua função de limpar a 'busca', com um clique.
+            </p>
+        </ul>
+</section>
+    </nav>
+    <footer>
+
+    </footer>
+</body>
+</html>
