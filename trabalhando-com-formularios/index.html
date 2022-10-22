@@ -8,25 +8,35 @@
 </head>
 <body>
     <head>
-        <section id="exemplo-de-formulario">
     <h1>Formulários HTML</h1> <hr />
-    <h3 style="color: blue;">Exemplo: Finalização de compra</h3>
+    </head>
+    <section id="exemplo-de-formulario">
+        <h3 style="color: blue;">Exemplo: Finalização de compra</h3>
     <form onsubmit="alert('Formulário enviado');" name= "cadastro" autocomplete="off" method="post" target="" action="#">
         <h3>Sobre seu pedido:</h3>
         <label for="cor">Cor favorita: </label><input type="color" name="cor"> <br />
-        <label for="cupom">Cupom SECRETO: </label><input type="password" name="cupom"> <br />
         <label for="data">Data de vencimento: </label><input type="date" name="data"> <br />
-        <label for="radio">Deseja embalagem para presente? </label> Sim<input type="radio" value="sim" name="aceita"> Não<input type="radio" value="nao" name="aceita"> <br />        <label for="nível">Nível de satisfação com a compra<sup>*</sup>: </label><input type="range" min="0" max="100" step="50" value="100" name="nivel"> <br />
+        <label for="radio">Deseja embalagem para presente? </label> Sim<input type="radio" value="sim" name="aceita"> Não<input type="radio" value="nao" name="aceita"> <br />        
+        <label for="mensagem">Mensagem de presente: </label><input type="textarea" name="mensagem" placeholder="Escreva algo especial!"> <br />
+        <label for="cupom"><small>Possui um cupom SECRETO? </small></label><input type="password" placeholder="Digite aqui!" name="cupom"> <br />
 
     <h3>Sobre você:</h3>
         <label for="nome">Nome: </label><input type="text" name="nome"> <br />
         <label for="idade">Idade: </label><input type="number" min="0" step="3" name="idade"> <br />
         <label for="mail">E-mail: </label><input name="mail" type="email"> <br />
         <label for="fone">Telefone: </label><input type="tel" name="fone"> <br />
+        <label for="regiao">Região do País: </label><select type="select" name="regiao">
+            <option value=""> Selecione a região</option>
+            <option value="norte"> Norte</option>
+            <option value="nordeste"> Nordeste</option>
+            <option value="centro-oeste"> Centro-Oeste</option>
+            <option value="sudeste"> Sudeste</option>
+            <option value="sul"> Sul</option></select> <br />
+        <label for="arquivo">Foto(s) para o seu perfil: </label><input type="file" multiple/> <br />
         <label for="site">Seu site: </label><input name="site" type="url"> <br />
-        <label for="arquivo">Foto(s) para o seu perfil: </label><input type="file" multiple/>
-        <br /> <small>        <label for="check">Concordo com os termos de uso: </label>  <input type="checkbox" value="sim" name="check"><br />
-        </small>
+        <label for="nível">Nível de satisfação com nosso serviço: <sup>*</sup>: </label><input type="range" min="0" max="100" step="50" value="100" name="nivel"> <br />
+            <br />
+        <label for="check"><small>Concordo com os termos de uso: </small></label><input type="checkbox" value="sim" name="check"><br />
         <p><button type="submit">Enviar</button></p>
         <small><sup>*</sup>Essa resposta é opcional, mas nos ajuda a oferecer o melhor serviço para você!</small>
         <hr />
@@ -37,7 +47,6 @@
         <label for="busca">Encontre seu produto aqui: </label><input type="search" name="busca">
     </form>
 </section>
-    </head>
     <nav>
 <section id="tag-form">
     <h3>TAG "form"</h3>
@@ -73,10 +82,18 @@
                 - step = Intervalo de pulos que da ao usar as setas do input <br>
         </p>
         </li>
+        <li>            Textarea: Permite a criação de um campo um pouco maior, e expansível (ajustável via css também) para texto.
+            <br />Types do textarea:
+            <br />- rows = permite definir linhas (altura do campo).
+            <br />- cols = permite definir colunas (largura do campo).
+        </li> <br />
+        <li>
+            Search: usado para buscar apresentando diversas funcionalidades dentro dos sites atuais, como os e-commerces. O diferencial desse campo é sua função de limpar a 'busca', com um clique.
+        </li> <br />
         <li>Button: Cria um botão clicável.</li>
          <p> Características do button: <br>
             < button type = <br>
-                - button [clicável] <br>
+                - button [padrão = clicável] <br>
                 - menu [abre um submenu] <br>
                 - reset [limpa os campos] <br>
                 - submit [envia o formulário] <br>
@@ -88,24 +105,50 @@
          <li>Color: Cria um seletor de cor.</li> <br />
          <li>Email e URL: cria um campo com validações predefinidas(com @ para e-mail, ou com http para url, por exemplo). </li> <br />
          <li>Date: Cria conforme o navegador usado, um campo para inserir data.</li> <br />
-         <li>Checkbox: Usado geralmente como valor booleano, cria um campo para selecionar (ou não, uma opção)</li> <br />
-         <li>Radio: Usado da mesma maneira do checkbox, porém definindo um 'name' em comum, ele impede que se possa selecionar duas opções ao mesmo tempo.</li> <br />
+         <li>Checkbox: 
+             Usado geralmente como valor booleano, cria um campo para selecionar (ou não, uma opção): <br />
+                < input type="checkbox" name="tal[]" value="tal1" > <br />
+                < input type="checkbox" name="tal[]" value="tal2" > <br />
+                < input type="checkbox" name="tal[]" value="tal3" > <br />
+                <br /> O name é o que vem de nome no JSON e value, de valor (e pode ser uma só variável 'nome', para vários 'valores'.) <br />
+                <br /> No exemplo acima, temos um JSON recebido assim:
+                <br /> 
+                tal[]: tal1 <br>
+                tal[]: tal2 <br>
+                tal[]: tal3 <br>
+                <p><b>Mas ATENÇÃO!</b> <br>
+                Para que o backend entenda todas as opções com o mesmo 'name' é IMPORTANTE não esquecer de acrescentar o colchetes após cada nome, senão ele irá interpretar apenas o último valor como válido. <br>
+                O melhor method para um formulário desse tipo é o POST. </p>
+
+         </li> <br />
+         <li>Radio: 
+             Usado da mesma maneira do checkbox, porém definindo um 'name' em comum, ele impede que se possa selecionar duas opções ao mesmo tempo. <br>
+             As types imprescindíveis dessa tag são name e value, assim como no checkbox, elas que serão usadas na leitura de informação pelo servidor.
+
+         </li> <br />
          <li>Tel: Cria um campo com a formatação editável e/ou predefinida para telefone. Aparentemente é um campo de texto comum. <br /> 
             Isso ocorre pois outros paises tem diferentes tipos de número de telefone, incluindo diversos tipos de caracteres. <br />
             Muitos navegadores atuais ainda não implementaram a tag 'tel' ainda.</li> <br />
          <li>Hidden: Campo invisível ao usuário do navegador, mas que permanece enviando dados ao servidor.</li> <br />
          <li>File: Campo para envio de arquivos. Nesse campo pode colocar um novo atributo 'sem valor atribuído', chamado /multiple. <br />
             Isso pode ser feito desta forma: < input type="file" multiple/ >  </li>
-            <h4>Extra!</h4>
-            <p>A partir do HTML 5 muitos dos campos acima foram implementados no Google Chrome. <br /> 
-            Um dos que prometem ser bastante uteis na criação, não exatamente só dos formulários mas também isoladamente é o campo 'search'. <br>
-            Como o próprio nome já diz, trata-se de um campo usado para buscar apresentando diversas funcionalidades dentro dos sites atuais, como os e-commerces. O diferencial desse campo é sua função de limpar a 'busca', com um clique.
-            </p>
         </ul>
 </section>
     </nav>
     <footer>
-
+        <h4>Extra! TAG select</h4>
+            <p>Cria uma caixa de seleção de opções pre-definidas. <br />
+                O select é uma TAG HTML, portanto não é um atributo dentro da tag input, possuindo seus próprios atributos (option) e necessitando de fechamento.<br> 
+                <p>Formato:
+                <br /> < select > <br />
+                        < option value="1" > valor 1 < /option > <br />
+                        < option value="2" > valor 2 < /option > <br />
+                    < /select >
+                <br><br>
+                Parâmetros do select: 
+                <br /> - selected (usado no option desejado) = deixa uma opção pre-escolhida, que pode ser alterada pelo usuário. 
+                <br /> - multiple = pode selecionar mais de um item.
+            </p></p>
     </footer>
 </body>
 </html>
